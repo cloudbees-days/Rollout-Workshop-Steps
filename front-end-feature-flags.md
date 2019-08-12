@@ -10,12 +10,12 @@ First log in to the Rollout dashboard with the account that you created in the S
 
 Now copy this key into:
 
-/frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js
+```/frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js```
 
 Make sure to save the file after you update it. 
 ![flags.js](img/2.png)
 
-And into /backend-spring-boot-react-crud-full-stack-with-maven/src/main/java/com/in28minutes/fullstack/springboot/maven/crud/springbootcrudfullstackwithmaven/course/CoursesHardcodedService.java
+And into ```/backend-spring-boot-react-crud-full-stack-with-maven/src/main/java/com/in28minutes/fullstack/springboot/maven/crud/springbootcrudfullstackwithmaven/course/CoursesHardcodedService.java```
 
 Make sure to save the file after you update it. 
 ![Java Setup Key](img/3.png)
@@ -48,7 +48,7 @@ Now go to localhost:3000 to see your webapp in action.
 
 In this first lab we will be adding a feature flag called Admin Control, with the idea of creating an admin and regular user role for our web application. An admin will have all of the access that you see initially, the ability to add new courses and edit existing ones. A regular user will only be able to view existing courses, they will not be able to add new courses or edit existing ones. 
 
-First, head to /frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js
+First, head to ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js```
 In there we will add a flag called adminFlag inside the Flags constant.
 Replace the const Flags declaration on line 4 with the code snippet below and then save your file:
 ```
@@ -57,7 +57,7 @@ const Flags = {
 	adminControl: new Rox.Flag()
 }
 ```
-Your entire /frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js file should now look like 
+Your entire ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js``` file should now look like 
 <details><summary>this:</summary>
 	
 ```
@@ -81,7 +81,7 @@ export default Flags;
 </details>
 
 Now we will wrap the existing front-end admin functionality in this new flag and then create regular user functionality as well.
-Head to /frontend-spring-boot-react-crud-full-stack-with-maven/src/component/ListCoursesComponent.jsx
+Head to ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/component/ListCoursesComponent.jsx```
 First we need to import our Container Class in which we have defined our feature flags (the flags.js file)
 Add the following line on line 3:
 ```
@@ -145,7 +145,7 @@ return (
 
 ![Flag check for buttons](img/5.png)
 
-<details><summary>Finished ListCoursesComponent.jsx code:</summary>
+<details><summary>Finished ```ListCoursesComponent.jsx``` code:</summary>
 
 ```
 import React, { Component } from 'react'
@@ -255,7 +255,7 @@ export default ListCoursesComponent
 ```
 </details>
 
-Now head into /frontend-spring-boot-react-crud-full-stack-with-maven/src/component/CourseComponent.jsx
+Now head into ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/component/CourseComponent.jsx```
 We will define the constant that will check if the adminControl flag is enabled. Add the following line of code inside the render() on line 71, right before the return function.
 ```
 const adminFlag = Flags.adminControl.isEnabled();
@@ -435,7 +435,7 @@ export default CourseComponent
 We will be adding the [Rollout Override View](https://support.rollout.io/docs/override-view) into our web-app for local testing purposes. 
 The Flags Override View is used for debugging purposes. It allows developers to expose a view that shows the current status for each flag, and it allows the user to override these flags. This view is usually exposed to only developers, the QA team, and the product team.
 
-Head in to /frontend-spring-boot-react-crud-full-stack-with-maven/src/component/InstructorApp.jsx
+Head in to ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/component/InstructorApp.jsx```
 First we need to import the Rollout SDK into the InstructorApp.jsx file
 Add the following import statement to line 7
 ```
