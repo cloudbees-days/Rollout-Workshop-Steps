@@ -11,7 +11,7 @@ Setup a GitHub.com user account that will be used later in this workshop. If you
 
 The workshop utilizes the **Rollout-Workshop-Final** repository from the [CloudBees Days GitHub Organization](https://github.com/cloudbees-days). Fork the **Rollout-Workshop-Final** repository into the GitHub account that you created above (if you are not sure how to fork a repository - see this [GitHub Guide on forking](https://guides.github.com/activities/forking/)):
 
-* https://github.com/avsyug/Rollout-Workshop-Final 
+* https://github.com/cloudbees-days/Rollout-Workshop-Final
 
 ## Clone the Workshop Repository locally
 ![Clone repo](img/31.png)
