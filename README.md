@@ -20,7 +20,7 @@ In order to follow along with the hands on portion of the workshop students shou
   * Access to a text editor of some sort to be able to follow along with the code changes during the workshop
   * A basic understanding of Docker: https://docs.docker.com/get-started/
   * Docker installed on your machine, and the understanding of Docker to be able to create Docker images from a prebuilt Dockerfile
-  * Access to the Rollout dashboard (should have received email with sign-up instructions)
+  * Access to the Rollout dashboard
    
 Detailed setup instructions are available at **[Setup](Setup.md)**
 
