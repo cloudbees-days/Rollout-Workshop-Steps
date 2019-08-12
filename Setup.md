@@ -28,4 +28,4 @@ If you are using Windows: https://docs.docker.com/docker-for-windows/install/
 
 If you are using Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/
   
-Once you have Docker installed and a local version of the repository you are ready to start the labs. You may proceed to the next set of [**labs**](./README.md#workshop-labs) - when your are you ready with this lab.
+Once you have Docker installed and a local version of the repository you are ready to start the labs. You may proceed to the next set of [**labs**](./README.md#workshop-labs)
