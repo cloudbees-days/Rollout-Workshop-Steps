@@ -5,7 +5,7 @@ In this lab we will get an introduction to the Rollout dashboard and the Rollout
 First off make sure you have forked and cloned locally the following repository: https://github.com/cloudbees-days/Rollout-Workshop-Final
 
 ## Dashboard Set Up
-First log in to the Rollout dashboard with the information that you were provided with prior to the workshop. Navigate to "App Settings" on the left and then "Environments" at the top. From there, copy the Production environment key as shown below. 
+First log in to the Rollout dashboard with the account that you created in the Setup steps. Navigate to "App Settings" on the left and then "Environments" at the top. From there, copy the Production environment key as shown below. 
 ![Environment Key](img/1.png)
 
 Now copy this key into:
