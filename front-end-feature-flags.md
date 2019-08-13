@@ -518,6 +518,24 @@ This will present you with a dropdown, where you will select default.adminContro
 We will now be presented with the default behavior of our feature flag in the Production environment. As you can see by default the adminControl feature flag will be set to false, and we want to change that to true. Click the dropdown inside the If statement block, and select true from the dropdown. After you have selected "True", click the "Update Audience" button at the bottom.
 ![Update audience admin](img/12.png)
 
+
+## Using custom property to enable admin control for a specific email
+We are going to add an email String property (see (docs)[https://support.rollout.io/docs/custom-properties]) to be able to toggle the `adminControl` flag based on the user email.
+
+To make things simple, we are going to fake the email and pull it from the URL 
+
+Inside `./frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js` just before `Rox.register` function lets add the following line 
+
+```javascript 
+Rox.setCustomStringProperty('email', () => window.location.search.substr(1).split("=")[1]);
+```
+
+Now lets add change the experiment to open this feature only for a specific email (with Property matching)
+
+
+ 
+## Next Step
+
 You can now head back into the webapp and you should see that the admin features are now active for all users, instead of the regular user features. 
 
 Congratulations! You have implemented feature flags in your React webapp and toggled them in your production environment using the Rollout dashboard.
