@@ -520,7 +520,7 @@ We will now be presented with the default behavior of our feature flag in the Pr
 
 
 ## Using custom property to enable admin control for a specific email
-We are going to add an email String property (see (docs)[https://support.rollout.io/docs/custom-properties]) to be able to toggle the `adminControl` flag based on the user email.
+We are going to add an email String property (see [docs](https://support.rollout.io/docs/custom-properties)) to be able to toggle the `adminControl` flag based on the user email.
 
 To make things simple, we are going to fake the email and pull it from the URL 
 
