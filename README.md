@@ -11,6 +11,9 @@ This repository contains instructions and learning materials for the workshop th
 
 To get started go to the [**Setup Instructions**](Setup.md).
 
+# Pre-Workshop Slide Deck
+https://docs.google.com/presentation/d/12-XDsYB-C8OHV28vI-nYIRl0OGHDzz2XUrcgYvPLRBU/edit?usp=sharing
+
 # Workshop Prerequisites
 
 In order to follow along with the hands-on portion of the workshop students should have the following resources available to them:
