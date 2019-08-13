@@ -24,7 +24,6 @@ Instead of completely replacing the old save functionality with the new, we will
 In CoursesHardcodedService.java replace the current ```public Course save(Course course)``` method on line 43 with the code below:
 ```
 public Course save(Course course) {
-		FlagsContainer conf = new FlagsContainer();
 		if(conf.newSave.isEnabled()) {
 			System.out.println("Save flag is enabled");
 			List<Course> tempCourses = new ArrayList<>();

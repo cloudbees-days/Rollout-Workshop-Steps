@@ -271,7 +271,6 @@ Just as before, now that we have defined our New Save feature flag, we will want
 Once in there, replace the ```public Course deleteByID(long id)``` method on line 76 with the following code snippet:
 ```
 	public Course deleteById(long id) {
-		FlagsContainer conf = new FlagsContainer();
 		if(conf.multiFlag.isEnabled()) {
 			Course course = findById(id);
 
@@ -364,7 +363,6 @@ public class CoursesHardcodedService {
 	}
 
 	public Course deleteById(long id) {
-		FlagsContainer conf = new FlagsContainer();
 		if(conf.multiFlag.isEnabled()) {
 			Course course = findById(id);
 
