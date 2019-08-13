@@ -45,5 +45,7 @@ Although the examples and code in this repository were originally created by emp
  
 # Questions, Feedback, Pull Requests Etc.
 
-If you have any questions, feedback, suggestions, etc. please submit them via issues or, even better, submit a Pull Request!
+If you have any Rollout specific questions, please feel free to reach out to support@Rollout.io and we will get back to you asap!
+
+If you have any workshop specific questions, feedback, suggestions, etc. please submit them via issues or, even better, submit a Pull Request!
 
