@@ -4,16 +4,16 @@ This workshop will provide a basic understanding of how to create and manage fea
 This repository contains instructions and learning materials for the workshop that is designed to teach the following key concepts:
 
   * How to introduce feature flags into your multiplatform application
-  * How to seperate feature deployments from releases
+  * How to separate feature deployments from releases
   * How to control features in production with the Rollout dashboard
   * How to use Rollout's many developer friendly tools to make feature flag implementation easier
 
 
-To get started goto the [**Setup Instructions**](Setup.md).
+To get started go to the [**Setup Instructions**](Setup.md).
 
 # Workshop Prerequisites
 
-In order to follow along with the hands on portion of the workshop students should have the following resources available to them:
+In order to follow along with the hands-on portion of the workshop students should have the following resources available to them:
 
   * Internet access to include access to https://github.com
   * An account on https://github.com and a basic understanding of how to use GitHub to do things like fork a repository, clone a repository, and checkout different branches
@@ -34,7 +34,7 @@ Detailed setup instructions are available at **[Setup](Setup.md)**
 
 # Disclaimer
 
-Although the examples and code in this repository was originally created by employees of CloudBees, Inc. to use in training customers, your use of this material is not sponsored or supported by CloudBees, Inc.
+Although the examples and code in this repository were originally created by employees of CloudBees, Inc. to use in training customers, your use of this material is not sponsored or supported by CloudBees, Inc.
 
 # Contributors 
 

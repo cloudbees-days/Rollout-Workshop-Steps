@@ -4,7 +4,7 @@ So far we have implemented the Rollout React SDK in our front end code, created 
 ## Feature Flag Implementation
 In this lab we will be implementing a new save functionality. However we might not be sure of how this new functionality will behave in our production environment so we want to gate this new feature behind a feature flag. 
 
-First, head to (the container class for our Java code) /backend-spring-boot-react-crud-full-stack-with-maven/src/main/java/com/in28minutes/fullstack/springboot/maven/crud/springbootcrudfullstackwithmaven/FlagsContainer.java
+First, head to (the container class for our Java code) ```/backend-spring-boot-react-crud-full-stack-with-maven/src/main/java/com/in28minutes/fullstack/springboot/maven/crud/springbootcrudfullstackwithmaven/FlagsContainer.java```
 
 In there we will add a new flag called newSave. Replace the FlagsContainer declaration on line 8 with the following code snippet:
 ```
@@ -15,11 +15,11 @@ public class FlagsContainer implements RoxContainer {
 ```
 Notice that newSave flag is enabled to be false by default, so this means that once we push this change into production, our new save functionality will not be enabled by default for all users. 
 
-Now that we have defined our New Save feature flag, we will want to go ahead and actually implement our new save course functioanlity. Head into /backend-spring-boot-react-crud-full-stack-with-maven/src/main/java/com/in28minutes/fullstack/springboot/maven/crud/springbootcrudfullstackwithmaven/course/CoursesHardcodedService.java
+Now that we have defined our New Save feature flag, we will want to go ahead and actually implement our new save course functionality. Head into ```/backend-spring-boot-react-crud-full-stack-with-maven/src/main/java/com/in28minutes/fullstack/springboot/maven/crud/springbootcrudfullstackwithmaven/course/CoursesHardcodedService.java```
 
 Here we will want to update the save() method. The current save configuration logic works like this: when a new course is saved, it is added to the bottom of the list with its ID being the lastID+1. The new save functionality that we want to implement will add the new course to the top of the course list, give it an ID of 1, and move all of the other courses down 1 spot and increase their ID by 1. 
 
-Instead of completely replacing the old save functionality with the new, we will keep both in our code and gate the new save functionality behind a feature flag. As mentioned before, we're doing this because we want to be safe with our deployment of this new feature. If for some reason our new save feature breaks in production, we want to have it wrapped in a feature flag so that we could kill the new feature, and still have the old feature as a back up.
+Instead of completely replacing the old save functionality with the new, we will keep both in our code and gate the new save functionality behind a feature flag. As mentioned before, we're doing this because we want to be safe with our deployment of this new feature. If for some reason our new save feature breaks in production, we want to have it wrapped in a feature flag so that we could kill the new feature, and still have the old feature as a backup.
 
 In CoursesHardcodedService.java replace the current ```public Course save(Course course)``` method on line 43 with the code below:
 ```
@@ -169,7 +169,7 @@ Now let's rebuild our Docker image with all of our code changes from before: ```
 
 And once the image has built, we will run that image inside of a Docker container with the following command: ```docker run -d -p 8080:8080 rollout-java```
 
-Once the deployment completes, head over into the web-app (localhost:3000), where we will test out the new save functionality. As mentioned earlier, when we defined the newSave flag, we defined it to be false by default. This means that when we head into the application, our new save functionality will not be active. To make it active we will have to head into the dashboard and create an experiment for our new save functionality.
+Once the deployment completes, head over into the web-app (http://localhost:3000), where we will test out the new save functionality. As mentioned earlier, when we defined the newSave flag, we defined it to be false by default. This means that when we head into the application, our new save functionality will not be active. To make it active we will have to head into the dashboard and create an experiment for our new save functionality.
 
 ## Using the Rollout Dashboard
 
@@ -200,7 +200,7 @@ New save functionality:
 
 The next thing we will show is how to utilize the "Kill Switch" feature offered with the Rollout dashboard. 
 
-We have deployed our new save functionality to all of our users in our production environment. But what if something went wrong with this new feature? Let's assume that all of a sudden the feature stops working in our production environment. Instead of going back into the code and pushing our old save functionalit all the way through, we can just kill our new feature.
+We have deployed our new save functionality to all of our users in our production environment. But what if something went wrong with this new feature? Let's assume that all of a sudden the feature stops working in our production environment. Instead of going back into the code and pushing our old save functionality all the way through, we can just kill our new feature.
 
 In the Rollout dashboard, in the "new save" experiment that we have just created, click on the big green "Active" button in the top right corner.
 

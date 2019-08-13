@@ -42,11 +42,11 @@ This will build a Docker image based on the Dockerfile inside the backend-spring
 
 Once the image has built, we will run that image inside of a Docker container with the following command: ```docker run -d -p 8080:8080 rollout-java```
 
-Now go to localhost:3000 to see your webapp in action.
+Now go to http://localhost:3000 to see your webapp in action.
 
 ## Feature Flag Implementation
 
-In this first lab we will be adding a feature flag called Admin Control, with the idea of creating an admin and regular user role for our web application. An admin will have all of the access that you see initially, the ability to add new courses and edit existing ones. A regular user will only be able to view existing courses, they will not be able to add new courses or edit existing ones. 
+In this first lab we will be adding a feature flag called Admin Control, with the idea of creating an admin and a regular user role for our web application. An admin will have all of the access that you see initially, the ability to add new courses and edit existing ones. Regular users will only be able to view existing courses, they will not be able to add new courses or edit existing ones. 
 
 First, head to ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js```
 In there we will add a flag called adminFlag inside the Flags constant.
@@ -256,6 +256,12 @@ export default ListCoursesComponent
 </details>
 
 Now head into ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/component/CourseComponent.jsx```
+
+First we need to import our Container Class in which we have defined our feature flags (the flags.js file)
+Add the following line on line 4:
+```
+import Flags from '../flags.js';
+```
 We will define the constant that will check if the adminControl flag is enabled. Add the following line of code inside the render() on line 71, right before the return function.
 ```
 const adminFlag = Flags.adminControl.isEnabled();
@@ -435,7 +441,7 @@ export default CourseComponent
 We will be adding the [Rollout Override View](https://support.rollout.io/docs/override-view) into our web-app for local testing purposes. 
 The Flags Override View is used for debugging purposes. It allows developers to expose a view that shows the current status for each flag, and it allows the user to override these flags. This view is usually exposed to only developers, the QA team, and the product team.
 
-Head in to ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/component/InstructorApp.jsx```
+Head into ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/component/InstructorApp.jsx```
 First we need to import the Rollout SDK into the InstructorApp.jsx file
 Add the following import statement to line 7
 ```
@@ -502,12 +508,12 @@ Now let's rebuild our Docker image with all of our code changes from before: ```
 
 And once the image has built, we will run that image inside of a Docker container with the following command: ```docker run -d -p 3000:3000 rollout-js```
 
-Head into ```localhost:3000``` to see all of the front-end feature changes that we have implemented.
+Head to http://localhost:3000 to see all of the front-end feature changes that we have implemented.
 
 ## Using the Rollout Dashboard
 Now that we have created our feature flags in the code, it is time to control the flags that are active in "production" with the Rollout Dashboard. 
 
-Head into the dashboard, expand the Production environment on the left, and click on "experiments". You should be presented with a screen telling you to create an experiment for your feature flags. Click on the "Create Experiment" button in the middle of the screen:
+Head into the dashboard, expand the Production environment on the left, and click on "Experiments". You should be presented with a screen telling you to create an experiment for your feature flags. Click on the "Create Experiment" button in the middle of the screen:
 ![Create experiment](img/10.png)
 
 This will present you with a dropdown, where you will select default.adminControl, which is the feature flag that we have created in the code. Once you have selected adminControl from the dropdown, click "Set Audience".
