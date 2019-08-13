@@ -49,7 +49,7 @@ Now go to http://localhost:3000 to see your webapp in action.
 In this first lab we will be adding a feature flag called Admin Control, with the idea of creating an admin and a regular user role for our web application. An admin will have all of the access that you see initially, the ability to add new courses and edit existing ones. Regular users will only be able to view existing courses, they will not be able to add new courses or edit existing ones. 
 
 First, head to ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js```
-In there we will add a flag called adminFlag inside the Flags constant.
+In there we will add a flag called adminControl inside the Flags constant.
 Replace the const Flags declaration on line 4 with the code snippet below and then save your file:
 ```
 const Flags = {
