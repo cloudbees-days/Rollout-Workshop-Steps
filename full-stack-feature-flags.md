@@ -7,7 +7,7 @@ The new feature that we will be introducing will be a "Delete" button in the fro
 ## Front End Feature Implementation
 We will split our feature implementation into two sections in this lab; front end implemenation and back end implementation. We will start first with the front-end implementation, the creation of the delete button. 
 
-Head into /frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js
+Head into ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js```.
 In there we will add a flag called multiFlag inside the Flags constant. Replace the const Flags declaration on line 4 with the code snippet below and then save your file.
 ```
 const Flags = {
@@ -16,7 +16,7 @@ const Flags = {
 	multiFlag: new Rox.Flag()
 }
 ```
-Your entire /frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js file should now look like 
+Your entire ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js``` file should now look like 
 <details><summary>this:</summary>
 	
 ```
@@ -41,10 +41,10 @@ export default Flags;
 </details>
 
 Now we will actually go ahead and create the Delete button in our React code.
-Head to /frontend-spring-boot-react-crud-full-stack-with-maven/src/component/ListCoursesComponent.jsx
-First we will define the constant that will check if our new mutliFlag is enabled. Add the following line of code inside the render() on line 56.
+Head to ```/frontend-spring-boot-react-crud-full-stack-with-maven/src/component/ListCoursesComponent.jsx```
+First we will define the constant that will check if our new multiFlag is enabled. Add the following line of code inside the render() on line 56.
 ```
-const adminFlag = Flags.multiFlag.isEnabled();
+const multiFlag = Flags.multiFlag.isEnabled();
 ```
 ![Multi Flag value check](img/22.png)
 
@@ -254,7 +254,7 @@ This will deploy our front-end implementation, but we still need to create the d
 
 Now that we have implemented our front-end feature, the delete button, we need to also implement the back-end Java logic that will actually handle the delete logic. 
 
-Head over into backend-spring-boot-react-crud-full-stack-with-maven/src/main/java/com/in28minutes/fullstack/springboot/maven/crud/springbootcrudfullstackwithmaven/FlagsContainer.java
+Head over into ```backend-spring-boot-react-crud-full-stack-with-maven/src/main/java/com/in28minutes/fullstack/springboot/maven/crud/springbootcrudfullstackwithmaven/FlagsContainer.java```
 
 In there we will add a new flag called multiFlag. Replace the FlagsContainer declaration on line 8 with the following code snippet:
 ```
@@ -266,7 +266,7 @@ public class FlagsContainer implements RoxContainer {
 ```
 Notice that the flag we added in the back-end is named the same thing as the flag added in the front-end. This is how you control multiplatform features under a single feature flag experiment in the Rollout dashboard. 
 
-Just as before, now that we have defined our New Save feature flag, we will want to go ahead and actually implement our new delete course functioanlity. Head into /backend-spring-boot-react-crud-full-stack-with-maven/src/main/java/com/in28minutes/fullstack/springboot/maven/crud/springbootcrudfullstackwithmaven/course/CoursesHardcodedService.java
+Just as before, now that we have defined our New Save feature flag, we will want to go ahead and actually implement our new delete course functioanlity. Head into ```/backend-spring-boot-react-crud-full-stack-with-maven/src/main/java/com/in28minutes/fullstack/springboot/maven/crud/springbootcrudfullstackwithmaven/course/CoursesHardcodedService.java```
 
 Once in there, replace the ```public Course deleteByID(long id)``` method on line 76 with the following code snippet:
 ```
@@ -403,7 +403,7 @@ Now let's rebuild our Docker image with all of our code changes from before: ```
 
 And once the image has built, we will run that image inside of a Docker container with the following command: ```docker run -d -p 8080:8080 rollout-java```
 
-Once the deployment completes, head over into the web-app (localhost:3000). However there will still be no delete button or delete functionality since the default value of the multiFlag flag is false. For that we will have to head into the dashboard and enable our new feature.
+Once the deployment completes, head over into the web-app (http://localhost:3000). However there will still be no delete button or delete functionality since the default value of the multiFlag flag is false. For that we will have to head into the dashboard and enable our new feature.
 
 ## Controlling the Multiplatform Feature in the Rollout Dashboard
 
@@ -418,7 +418,7 @@ From the dropdown, select "default.multiFlag". You might notice that even though
 Inside the experiment details, hit the "Platform Management" button in the top right. 
 ![Platform management button](img/28.png)
 
-In there you can toggle which platform you want this experiment to control, with all platforms being enabled by default. We will not be changing anything in this viiew, this was just to show that the multiFlag experiment in the dashboard will control both platforms. Go ahead and click cancel. 
+In there you can toggle which platform you want this experiment to control, with all platforms being enabled by default. We will not be changing anything in this view, this was just to show that the multiFlag experiment in the dashboard will control both platforms. Go ahead and click cancel. 
 ![Platform management view](img/29.png)
 
 Finally we will set the default behavior of the flag to "true" and then we will click on "Update Audience" on the bottom right.
