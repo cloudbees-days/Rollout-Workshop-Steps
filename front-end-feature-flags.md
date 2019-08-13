@@ -530,10 +530,20 @@ Inside `./frontend-spring-boot-react-crud-full-stack-with-maven/src/flags.js` ju
 Rox.setCustomStringProperty('email', () => window.location.search.substr(1).split("=")[1]);
 ```
 
-Now lets add change the experiment to open this feature only for a specific email (with Property matching)
+Rebuld and run the docker. 
 
 
- 
+Now lets add change the experiment to open this feature only for a specific email (with Property matching) for email to match `greg@cloudbees.com`
+
+Now you can visit 
+`http://localhost:3000/courses?email=someoneelse@cloudbees.com` 
+
+And: 
+`http://localhost:3000/courses?email=greg@cloudbees.com`
+
+And see the difference
+
+
 ## Next Step
 
 You can now head back into the webapp and you should see that the admin features are now active for all users, instead of the regular user features. 
